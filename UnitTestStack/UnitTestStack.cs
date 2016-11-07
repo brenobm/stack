@@ -25,15 +25,19 @@ namespace UnitTestStack
         [TestMethod]
         public void TestPushOneElement()
         {
-            stack.Push("First element");
+            string element = "First element";
 
-            Assert.AreEqual<string>("First element", stack.Top);
+            stack.Push(element);
+
+            Assert.AreEqual<string>(element, stack.Top);
         }
 
         [TestMethod]
         public void TestPushSizeOneElement()
         {
-            stack.Push("First element");
+            string element = "First element";
+
+            stack.Push(element);
 
             Assert.AreEqual<int>(1, stack.Size);
         }
@@ -41,10 +45,12 @@ namespace UnitTestStack
         [TestMethod]
         public void TestPushPopElement()
         {
-            stack.Push("First element");
+            string element = "First element";
+
+            stack.Push(element);
 
             Assert.IsFalse(stack.IsEmpty);
-            Assert.AreEqual<string>("First element", stack.Pop());
+            Assert.AreEqual<string>(element, stack.Pop());
             Assert.IsTrue(stack.IsEmpty);
         }
     }
