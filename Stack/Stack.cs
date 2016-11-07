@@ -26,7 +26,8 @@ namespace StackProject
 
         public Stack<T> Push(T element)
         {
-            return null;
+            this.element = element;
+            return this;
         }
 
         private int size;
