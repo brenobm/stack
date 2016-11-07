@@ -53,5 +53,23 @@ namespace UnitTestStack
             Assert.AreEqual<string>(element, stack.Pop());
             Assert.IsTrue(stack.IsEmpty);
         }
+
+        [TestMethod]
+        public void TestPushPopTwoElements()
+        {
+            string element1 = "First element";
+            string element2 = "Second element";
+
+            stack.Push(element1);
+
+            Assert.IsFalse(stack.IsEmpty);
+
+            stack.Push(element2);
+
+            Assert.AreEqual<string>(element2, stack.Pop());
+            Assert.AreEqual<string>(element1, stack.Pop());
+
+            Assert.IsTrue(stack.IsEmpty);
+        }
     }
 }
