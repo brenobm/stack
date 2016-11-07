@@ -7,22 +7,35 @@ namespace UnitTestStack
     [TestClass]
     public class UnitTestStack
     {
+        private Stack<string> stack = null;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            stack = new Stack<string>();
+        }
+
+
         [TestMethod]
         public void TestEmptyStack()
         {
-            Stack<string> stack = new Stack<string>();
-
             Assert.IsTrue(stack.IsEmpty, "The stack isn't empty.");
         }
 
         [TestMethod]
         public void TestPushOneElement()
         {
-            Stack<string> stack = new Stack<string>();
-
             stack.Push("First element");
 
             Assert.AreEqual<string>("First element", stack.Top);
+        }
+
+        [TestMethod]
+        public void TestPushSizeOneElement()
+        {
+            stack.Push("First element");
+
+            Assert.AreEqual<int>(1, stack.Size);
         }
     }
 }

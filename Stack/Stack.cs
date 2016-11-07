@@ -24,6 +24,14 @@ namespace StackProject
             }
         }
 
+        public int Size
+        {
+            get
+            {
+                return this.size;
+            }
+        }
+
         public Stack<T> Push(T element)
         {
             this.element = element;
