@@ -39,7 +39,12 @@ namespace StackProject
             return this;
         }
 
+        public string Pop()
+        {
+            throw new NotImplementedException();
+        }
+
         private int size;
-        private T element;
+        private T element;              
     }
 }
