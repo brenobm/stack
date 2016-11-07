@@ -12,8 +12,10 @@ namespace StackProject
         {
             get
             {
-                return false;
+                return size == 0;
             }
         }
+
+        private int size;
     }
 }
