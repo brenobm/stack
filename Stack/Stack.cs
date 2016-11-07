@@ -8,6 +8,11 @@ namespace StackProject
 {
     public class Stack<T>
     {
+        public Stack()
+        {
+            this.elements = new T[10];
+        }
+
         public bool IsEmpty
         {
             get
@@ -20,7 +25,7 @@ namespace StackProject
         {
             get
             {
-                return this.element;
+                return this.elements[this.size - 1];
             }
         }
 
@@ -34,18 +39,16 @@ namespace StackProject
 
         public Stack<T> Push(T element)
         {
-            this.element = element;
-            this.size++;
+            this.elements[this.size++] = element;
             return this;
         }
 
         public T Pop()
         {
-            this.size--;
-            return this.element;
+            return this.elements[--this.size];
         }
 
         private int size;
-        private T element;              
+        private T[] elements;              
     }
 }
