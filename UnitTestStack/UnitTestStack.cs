@@ -15,6 +15,14 @@ namespace UnitTestStack
             Assert.IsTrue(stack.IsEmpty, "The stack isn't empty.");
         }
 
-        
+        [TestMethod]
+        public void TestPushOneElement()
+        {
+            Stack<string> stack = new Stack<string>();
+
+            stack.Push("First element");
+
+            Assert.AreEqual<string>("First element", stack.Top);
+        }
     }
 }

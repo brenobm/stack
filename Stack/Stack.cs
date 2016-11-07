@@ -12,10 +12,24 @@ namespace StackProject
         {
             get
             {
-                return size == 0;
+                return this.size == 0;
             }
         }
 
+        public T Top
+        {
+            get
+            {
+                return this.element;
+            }
+        }
+
+        public Stack<T> Push(T element)
+        {
+            return null;
+        }
+
         private int size;
+        private T element;
     }
 }
