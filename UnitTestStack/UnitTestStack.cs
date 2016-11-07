@@ -10,9 +10,11 @@ namespace UnitTestStack
         [TestMethod]
         public void TestEmptyStack()
         {
-            Stack stack = new Stack();
+            Stack<string> stack = new Stack<string>();
 
             Assert.IsTrue(stack.IsEmpty, "The stack isn't empty.");
         }
+
+        
     }
 }

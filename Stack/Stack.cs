@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StackProject
 {
-    public class Stack
+    public class Stack<T>
     {
         public bool IsEmpty
         {
