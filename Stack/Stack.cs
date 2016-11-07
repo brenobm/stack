@@ -35,6 +35,7 @@ namespace StackProject
         public Stack<T> Push(T element)
         {
             this.element = element;
+            this.size++;
             return this;
         }
 
