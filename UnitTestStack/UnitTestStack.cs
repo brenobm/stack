@@ -44,7 +44,7 @@ namespace UnitTestStack
             stack.Push("First element");
 
             Assert.IsFalse(stack.IsEmpty);
-            Assert.AreEqual<string>("Firt element", stack.Pop());
+            Assert.AreEqual<string>("First element", stack.Pop());
             Assert.IsTrue(stack.IsEmpty);
         }
     }
