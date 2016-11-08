@@ -8,9 +8,10 @@ namespace StackProject
 {
     public class Stack<T>
     {
-        public Stack()
+        public Stack(int maxSize)
         {
-            this.elements = new T[10];
+            this.elements = new T[maxSize];
+            this.maxSize = maxSize;
         }
 
         public bool IsEmpty
@@ -54,6 +55,7 @@ namespace StackProject
         }
 
         private int size;
+        private int maxSize;
         private T[] elements;              
     }
 }

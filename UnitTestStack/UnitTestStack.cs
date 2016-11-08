@@ -12,7 +12,7 @@ namespace UnitTestStack
         [TestInitialize]
         public void Initialize()
         {
-            stack = new Stack<string>();
+            stack = new Stack<string>(10);
         }
 
 
