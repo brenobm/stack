@@ -40,12 +40,15 @@ namespace StackProject
 
         public Stack<T> Push(T element)
         {
-            if (this.size == this.maxSize - 1)
+            if (this.size == this.maxSize)
             {
-                throw new MaxSizeStackException("Stack full.");
+                //throw new MaxSizeStackException("Stack full.");
+            }
+            else
+            {
+                this.elements[this.size++] = element;
             }
 
-            this.elements[this.size++] = element;
             return this;
         }
 
