@@ -71,5 +71,12 @@ namespace UnitTestStack
 
             Assert.IsTrue(stack.IsEmpty);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(EmptyStackException))]
+        public void TestPopInEmptyStack()
+        {
+            stack.Pop();
+        }
     }
 }
