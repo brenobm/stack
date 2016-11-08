@@ -13,7 +13,7 @@ namespace UnitTestStack
         [TestInitialize]
         public void Initialize()
         {
-            stack = new Stack<string>(maxSize);
+            stack = new Stack<string>();
         }
 
 

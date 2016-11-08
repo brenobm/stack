@@ -8,12 +8,6 @@ namespace StackProject
 {
     public class Stack<T>
     {
-        public Stack(int maxSize)
-        {
-            this.elements = new T[maxSize];
-            this.maxSize = maxSize;
-        }
-
         public bool IsEmpty
         {
             get
@@ -26,7 +20,7 @@ namespace StackProject
         {
             get
             {
-                return this.elements[this.size - 1];
+                return this.top.Element;
             }
         }
 
@@ -40,12 +34,10 @@ namespace StackProject
 
         public Stack<T> Push(T element)
         {
-            if (this.size == this.maxSize)
-            {
-                throw new MaxSizeStackException("Stack full.");
-            }
+            StackItem<T> stackItem = new StackItem<T>(element, this.top);
+            this.top = stackItem;
+            this.size++;
 
-            this.elements[this.size++] = element;
             return this;
         }
 
@@ -56,11 +48,28 @@ namespace StackProject
                 throw new EmptyStackException("Stack empty.");
             }
 
-            return this.elements[--this.size];
+            T item = this.top.Element;
+            this.top = this.top.NextElement;
+            this.size--;
+
+            return item;
         }
 
         private int size;
         private int maxSize;
-        private T[] elements;              
+        private StackItem<T> top;
+
+        private class StackItem<T>
+        {
+            public StackItem(T element, StackItem<T> nextElement)
+            {
+                this.Element = element;
+                this.NextElement = nextElement;
+            }
+
+            public T Element { get; set; }
+
+            public StackItem<T> NextElement { get; set; }
+        }
     }
 }
