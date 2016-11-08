@@ -83,7 +83,7 @@ namespace UnitTestStack
         [TestMethod]
         public void TestMaxSizeStack()
         {
-            for(int i = 0; i < maxSize; i++)
+            for (int i = 0; i < maxSize; i++)
             {
                 stack.Push($"Element {i + 1}");
             }
@@ -98,6 +98,31 @@ namespace UnitTestStack
                 Assert.IsInstanceOfType(e, typeof(MaxSizeStackException));
             }
 
+        }
+
+        [TestMethod]
+        public void TestPushPopManyElements()
+        {
+            Assert.IsTrue(stack.IsEmpty);
+            Assert.AreEqual<int>(0, stack.Size);
+
+            for (int i = 0; i < this.maxSize; i++)
+            {
+                stack.Push($"Element {i}");
+                Assert.AreEqual<int>(i + 1, stack.Size);
+                Assert.AreEqual<string>($"Element {i}", stack.Top);
+                Assert.IsFalse(stack.IsEmpty);
+            }
+
+            for (int i = this.maxSize - 1; i >= 0; i--)
+            {
+                Assert.IsFalse(stack.IsEmpty);
+                Assert.AreEqual<string>($"Element {i}", stack.Pop());
+                Assert.AreEqual<int>(i, stack.Size);
+            }
+
+            Assert.IsTrue(stack.IsEmpty);
+            Assert.AreEqual<int>(0, stack.Size);
         }
     }
 }
