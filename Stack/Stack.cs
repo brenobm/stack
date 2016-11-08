@@ -45,6 +45,11 @@ namespace StackProject
 
         public T Pop()
         {
+            if (this.size == 0)
+            {
+                throw new EmptyStackException("Stack empty.");
+            }
+
             return this.elements[--this.size];
         }
 
