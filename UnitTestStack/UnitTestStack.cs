@@ -8,11 +8,12 @@ namespace UnitTestStack
     public class UnitTestStack
     {
         private Stack<string> stack = null;
+        private int maxSize = 10;
 
         [TestInitialize]
         public void Initialize()
         {
-            stack = new Stack<string>(10);
+            stack = new Stack<string>(maxSize);
         }
 
 
@@ -77,6 +78,16 @@ namespace UnitTestStack
         public void TestPopInEmptyStack()
         {
             stack.Pop();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MaxSizeStackException))]
+        public void TestMaxSizeStack()
+        {
+            for(int i = 0; i <= maxSize; i++)
+            {
+                stack.Push($"Element {i + 1}");
+            }
         }
     }
 }
