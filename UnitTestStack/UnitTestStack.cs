@@ -81,26 +81,6 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void TestMaxSizeStack()
-        {
-            for (int i = 0; i < maxSize; i++)
-            {
-                stack.Push($"Element {i + 1}");
-            }
-
-            try
-            {
-                stack.Push($"Element {maxSize + 1}");
-                Assert.Fail();
-            }
-            catch (Exception e)
-            {
-                Assert.IsInstanceOfType(e, typeof(MaxSizeStackException));
-            }
-
-        }
-
-        [TestMethod]
         public void TestPushPopManyElements()
         {
             Assert.IsTrue(stack.IsEmpty);
