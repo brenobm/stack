@@ -42,13 +42,10 @@ namespace StackProject
         {
             if (this.size == this.maxSize)
             {
-                //throw new MaxSizeStackException("Stack full.");
-            }
-            else
-            {
-                this.elements[this.size++] = element;
+                throw new MaxSizeStackException("Stack full.");
             }
 
+            this.elements[this.size++] = element;
             return this;
         }
 
